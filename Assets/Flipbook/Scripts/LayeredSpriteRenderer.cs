@@ -79,7 +79,7 @@ public sealed class LayeredSpriteRenderer : MonoBehaviour
             return;
         }
         
-        Material sourceMat = _sourceRenderer.material;
+        Material sourceMat = _sourceRenderer.sharedMaterial;
         bool valid = sourceMat != null && sourceMat.shader != null && sourceMat.shader.name == "Sprites/LayeredSprite";
         if(!valid)
         {

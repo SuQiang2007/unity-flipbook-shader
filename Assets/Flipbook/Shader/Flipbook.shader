@@ -76,8 +76,8 @@ Shader "Sprites/LayeredSprite"
 
                 //获取视图空间坐标
                 float offsetZ = UnityObjectToViewPos(flipped.xyz).z - _ViewDepthOffset;
-                float nearZ = - _ProjectionParams.y;
-                float farZ = - _ProjectionParams.z;
+                float nearZ = _ProjectionParams.y;
+                float farZ = _ProjectionParams.z;
                 offsetZ = clamp(offsetZ, nearZ, farZ);
                 //获取裁剪空间坐标（虚拟坐标）
                 float4 pushTo = mul(UNITY_MATRIX_P, float4(0,0,offsetZ,1));
